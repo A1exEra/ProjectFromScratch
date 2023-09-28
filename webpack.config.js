@@ -1,11 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   mode: 'development',
   entry: { bundle: path.resolve(__dirname, './src/script.js') },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]_[contenthash].js',
+    assetModuleFilename: '[name][ext]',
     clean: true,
   },
   devtool: 'source-map',
@@ -31,6 +34,20 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -39,5 +56,6 @@ module.exports = {
       filename: 'index.html',
       template: 'src/template.html',
     }),
+    new BundleAnalyzerPlugin(),
   ],
 };
