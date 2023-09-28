@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto&family=Ubuntu&display=swap');
+
+*,
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: cornflowerblue;
+}
+
+h2,
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h4,
+h5,
+h6,
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: hsl(265, 19%, 88%);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  color: red;
+}
