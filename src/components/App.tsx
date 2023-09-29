@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
-import React from 'react';
-import Test from './Test.jsx';
+// import React from 'react';
+import Test from './Test';
 import '../styles/styles.scss';
 import img from '../assets/images/sandro.jpeg';
 

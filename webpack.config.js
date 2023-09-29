@@ -1,26 +1,7 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  mode: 'development',
-  entry: { bundle: path.resolve(__dirname, './src/index.js') },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name]_[contenthash].js',
-    assetModuleFilename: '[name][ext]',
-    clean: true,
-  },
-  devtool: 'source-map',
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist'),
-    },
-    port: 8080,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {
@@ -45,6 +26,12 @@ module.exports = {
         },
       },
       {
+        // babel 7 does not require this rule because it has out-of-the-box TS integration
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ['ts-loader'],
+      },
+      {
         test: /\.(png|svg|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
@@ -58,4 +45,7 @@ module.exports = {
     }),
     new BundleAnalyzerPlugin(),
   ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+  },
 };

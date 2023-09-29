@@ -2,14 +2,13 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
+import ReactDOM from 'react-dom/client';
+import App from './components/App';
 
 console.log('God Of Code');
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

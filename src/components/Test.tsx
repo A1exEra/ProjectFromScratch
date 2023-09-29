@@ -1,9 +1,10 @@
 import React from 'react';
 
 function Test() {
+  const text: string = 'TESTING';
   return (
     <div>
-      <h4>This is the testing</h4>
+      <h4>{text}</h4>
     </div>
   );
 }
