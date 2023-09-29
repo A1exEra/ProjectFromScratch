@@ -9,6 +9,7 @@
     "eslint:recommended",
     "airbnb",
     "airbnb/hooks",
+    "airbnb-typescript",
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -39,6 +40,14 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
-    "react/display-name": 1
+    "react/display-name": 1,
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ]
   }
 }
