@@ -51,13 +51,13 @@ module.exports = {
       },
     ],
     'react/display-name': 1,
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        jsx: 'never',
-      },
-    ],
+    // 'import/extensions': [
+    //   'error',
+    //   'always',
+    //   {
+    //     js: 'never',
+    //     jsx: 'never',
+    //   },
+    // ],
   },
 };

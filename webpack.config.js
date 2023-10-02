@@ -16,6 +16,21 @@ module.exports = {
         ],
       },
       {
+        test: /\.module\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[local]__[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {

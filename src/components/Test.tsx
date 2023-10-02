@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Test() {
   const text: string = 'TESTING';
   return (
